@@ -1,0 +1,107 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color:black;
+  box-shadow: 0 4px 6px rgba(206, 194, 194, 0.5); /* Add shadow here */
+  position: sticky; /* Makes navbar stick to the top */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap:50px;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  font-family: 'Lora', serif;   
+  /* font-family: 'Playfair Display', serif; */
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+/* .navbar-links li:hover{
+  transform: scale(1.5);
+
+} */
+
+.navbar-links a:hover:not(.login-link) {
+  color: #a1a195; /* Change color on hover */
+
+}
+
+
+
+.navbar-links a.login-link {
+  background-color: #628eb7; /* Background color for Log In */
+  border: 2px solid #0056b3; /* Border color for Log In */
+  border-radius: 5px; /* Optional: Adds rounded corners */
+  padding: 5px 10px; /* Optional: Adds padding */
+}
+
+.navbar-links a.login-link:hover {
+  background-color: #4b94e1; /* Hover effect for Log In */
+  border-color: #1f0cb5; /* Border color on hover */
+}
+
+
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.navbar-links.active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links li {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

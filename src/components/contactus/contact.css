@@ -1,0 +1,127 @@
+  
+  /* Style for the contact us form container */
+  .contact-us-container {
+    width: 50%;  
+    margin: 5% 25%;
+    /* padding: 20px 30px; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+    /* background-color: yellow; */
+  }
+  
+  /* Form heading */
+  .contact-us-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Flexbox for the form layout */
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group {
+    /* padding: 0px 20%; */
+    margin:10px 10%;
+    display: flex;  /* Align label and input on the same line */
+    flex-direction: row; /* Align elements in a row */
+    align-items: center; /* Align input and label in the center */
+    width: 80%;
+  }
+  
+  .form-label {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 20px; /* Space between label and input */
+    width: 120px;
+  }
+  
+  .form-input, .form-textarea {
+    padding: 12px;
+    width: 100%;  /* Full width to take up remaining space */
+    max-width: 450px; /* Set max-width for input fields */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus, .form-textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  .form-textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInError 1s forwards;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    padding: 14px 30px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: center;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+  }
+  
+  .submit-button:active {
+    background-color: #004085;
+    transform: translateY(1px);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInError {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
