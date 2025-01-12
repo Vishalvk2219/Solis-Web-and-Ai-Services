@@ -1,33 +1,33 @@
-// Home.js
 import React from 'react';
 import ReactPlayer from 'react-player';
 import './home.css';
 
 const Home = () => {
   return (
-    <>
     <div className="home-container">
-      <div className="text-container">
-        <h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac neque vel
-          augue luctus fringilla a et purus. Integer vel augue augue. Nullam sit amet
-          efficitur purus. Integer ut orci dui.
-        </h2>
+      {/* Background Video */}
+      <div className="video-background">
+        <ReactPlayer
+          url="https://cdn.pixabay.com/video/2023/03/22/155718-810722623_large.mp4"
+          playing={true}
+          loop={true}
+          muted={true}
+          width="100%"
+          height="100%"
+          className="react-player-background"
+        />
       </div>
-      <div className="video-container">
-      <ReactPlayer
-        url="/video/vid2.mp4"
-        controls={false}
-        width="100%" 
-        height="100%"
-        playing={true}
-        loop={true}
-        muted={true}
-      />
+
+      {/* Foreground Content */}
+      <div className="content-overlay">
+        <div className="text-container">
+          <h1>SOLIS</h1>
+          <h2>
+            Transforming your ideas into reality with expert solutions, tailored to meet your unique needs and drive success.
+          </h2>
+        </div>
       </div>
     </div>
-    
-    </>
   );
 };
 

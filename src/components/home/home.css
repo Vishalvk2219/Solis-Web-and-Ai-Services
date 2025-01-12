@@ -1,39 +1,96 @@
-/* Home.css */
+/* Main container */
 .home-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* height: 80vh; */
-    padding: 10% 5%;
-    box-sizing: border-box;
-    background-color: transparent;
-  }
-  
-  .text-container {
-    width: 50%;
-    font-size: 18px;
-    line-height: 1.6;
-    padding: 50px;
-    /* background-color:red; */
-    border-radius: 8px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  }
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
 
-  h2 {
-    font-size: 2rem;
-    /* color:black */
- }
-  
-  
-  .video-container {
-    width: 40%;
-    /* background-color: red; */
-    /* height: 50%; */
-    /* padding: 10px 10px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    /* background-color: blue; */
+/* Background video styling */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place video behind the content */
+  overflow: hidden;
+  background-color: red;
+}
+
+
+.react-player-background {
+  width: 100vw; 
+  height: 100vh; 
+  object-fit:cover;
+  pointer-events: none; 
+  background-color: olivedrab;
+}
+
+/* Foreground content overlay */
+.content-overlay {
+  position: relative;
+  z-index: 1; /* Place content above the video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Styling for the text container h1 */
+.text-container h1 {
+  font-size: 8rem;
+  font-family: 'Poppins', sans-serif; /* Applying Poppins font */
+  background-image: linear-gradient(to right, #d3502f, #d7f454); /* Gradient from orange to peach */
+  color: transparent; /* Make text transparent so that the gradient is visible */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  background-clip: text; /* For non-webkit browsers */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  line-height: 1.2;
+  font-weight: 600; /* Make text bold */
+  margin: 0;
+  text-align: center; /* Center align the heading */
+}
+
+/* Example for responsiveness */
+@media (max-width: 768px) {
+  .text-container h1 {
+    font-size: 4rem; /* Reduce font size for smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .text-container h1 {
+    font-size: 3rem; /* Further reduce font size for very small screens */
+  }
+}
+.text-container h2 {
+  font-size: 3rem;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
+  max-width: 70vw;
+  line-height: 1.6;
+  margin: 0 auto;
+  font-family: var(--font-family);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .text-container h2 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-container h2 {
+    font-size: 1.8rem; /* Further reduce font size for very small screens */
+  }
+}

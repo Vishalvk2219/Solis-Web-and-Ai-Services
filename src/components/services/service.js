@@ -6,33 +6,39 @@ const Service = () => {
   const cards = [
     {
       id: 1,
-      title: 'Website Design',
-      bgImage: 'url(https://images.pexels.com/photos/371589/pexels-photo-371589.jpeg?cs=srgb&dl=clouds-conifer-daylight-371589.jpg&fm=jpg)', // Replace with your image path
-      text: 'This is card 1 description',
+      title: 'Web Development',
+      bgImage: 'url(https://wallpaperbat.com/img/183543-web-development-wallpaper-top-free-web-development-background.jpg)', // Replace with your image path
+      text: 'We specialize in crafting modern, responsive, and user-friendly websites tailored to your business needs. From sleek landing pages to dynamic web applications, our team ensures top-notch performance, intuitive design, and seamless user experiences. Let us help bring your vision to life on the web.',
     },
     {
       id: 2,
-      title: 'SEO',
-      bgImage: 'url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Background-Beautiful-Nature-Images-HD.jpg)', // Replace with your image path
-      text: 'This is card 2 description',
+      title: 'Logo Designing',
+      bgImage: 'url(https://images.pexels.com/photos/1193743/pexels-photo-1193743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)', // Replace with your image path
+      text: 'A logo is the face of your brand, and we create designs that leave a lasting impression. Our logo designing services focus on delivering unique, professional, and visually captivating designs that resonate with your brand’s identity and values. Stand out with a logo that speaks for itself.',
     },
     {
       id: 3,
-      title: 'AI Integration',
-      bgImage: 'url(https://images.unsplash.com/photo-1489829024224-f5ef0434a0ca?q=80&w=1784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with your image path
-      text: 'This is card 3 description',
+      title: 'AI Chatbot',
+      bgImage: 'url(https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png)', // Replace with your image path
+      text: 'Enhance customer engagement and streamline operations with our AI-powered chatbot solutions. Designed to handle customer queries, provide personalized responses, and automate repetitive tasks, our chatbots are efficient, intelligent, and adaptable to your business requirements.',
     },
     {
       id: 4,
       title: 'Website Maintenance',
-      bgImage: 'url(https://images.unsplash.com/photo-1502745785315-67f3193a7a10?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)', // Replace with your image path
-      text: 'This is card 4 description',
+      bgImage: 'url(https://cdn.pixabay.com/photo/2018/05/22/09/45/laptop-3420932_1280.jpg)', // Replace with your image path
+      text: 'Keep your website running smoothly with our reliable maintenance services. We handle updates, security checks, performance optimizations, and bug fixes to ensure your site stays fast, secure, and functional. Focus on your business while we take care of the technical details.',
+    },
+    {
+      id: 5,
+      title: 'SEO Services',
+      bgImage: 'url(https://cdn.pixabay.com/photo/2022/12/21/04/01/laptop-7669027_1280.jpg)', // Replace with your image path
+      text: 'Boost your online presence and drive organic traffic with our expert SEO services. We employ proven strategies to improve search engine rankings, optimize your website for relevant keywords, and enhance its visibility. Let us help your business get noticed by the right audience.',
     },
   ];
 
   const moveSlide = useCallback((direction) => {
     const newIndex = (currentIndex + direction + cards.length) % cards.length;
-    setCurrentIndex(newIndex);
+    setCurrentIndex(newIndex); 
   }, [currentIndex, cards.length]); 
 
 

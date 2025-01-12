@@ -1,27 +1,70 @@
-.ourmoto{
-    width:90%;
-    margin: 50px 5%;
-    background-color: transparent;
-    padding: 50px 0px;
-    /* border: 2px solid #ffffff; */
-    /* box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); */
-    transition: box-shadow 0.3s ease-in-out;
-    border-radius: 30px;
-}
-
-.ourmoto:hover{
-    box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.7);
-}
-.ourmoto h1{
-    font-size: 3rem;
-    /* color: red; */
+/* Moto.css */
+.ourmoto {
+    width: 90%;
+    margin: var(--spacing-xl) 5%;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-paper);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ourmoto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    opacity: 0.05;
+    transition: opacity 0.3s ease;
+  }
+  
+  .ourmoto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .ourmoto:hover::before {
+    opacity: 0.1;
+  }
+  
+  .ourmoto h1 {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
     text-align: center;
-}
-
-.ourmoto p{
-    max-width: 80%;
-    padding: 0 10%;
-    font-size: 1.5rem;
-    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    font-weight: 700;
+  }
+  
+  .ourmoto p {
+    max-width: 70%;
+    padding: 0 15%;
+    font-size: var(--font-size-xl);
     line-height: 1.5;
-}
+    color: var(--text-primary);
+    position: relative;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .ourmoto {
+      width: 95%;
+      margin: var(--spacing-lg) 2.5%;
+      padding: var(--spacing-lg) 0;
+    }
+  
+    .ourmoto h1 {
+      font-size: var(--font-size-xl);
+    }
+  
+    .ourmoto p {
+      max-width: 90%;
+      padding: 0 5%;
+      font-size: var(--font-size-lg);
+    }
+  }

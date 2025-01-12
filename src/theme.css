@@ -1,0 +1,49 @@
+/* theme.css */
+:root {
+    /* Colors */
+    --primary-color: #2C3E50;
+    --primary-light: #34495E;
+    --primary-dark: #243342;
+    
+    --secondary-color: #ECF0F1;
+    --secondary-light: #F4F6F7;
+    --secondary-dark: #D5DBDB;
+    
+    --accent-color: #3498DB;
+    --accent-light: #5DADE2;
+    --accent-dark: #2874A6;
+    
+    --text-primary: #34495E;
+    --text-secondary: #7F8C8D;
+    --text-light: #BDC3C7;
+    
+    --background-default: lightgrey;
+    --background-paper: #F8FAFC;
+  
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+  
+    /* Border Radius */
+    --border-radius-sm: 0.125rem;
+    --border-radius-md: 0.25rem;
+    --border-radius-lg: 0.5rem;
+    --border-radius-full: 9999px;
+  
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }

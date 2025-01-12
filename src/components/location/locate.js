@@ -6,11 +6,11 @@ const Locate = () => {
     <div className="locate-container">
       <div className="address-section">
         <h2>Our Address</h2>
-        <p>1234 Your Company Street</p>
-        <p>Your City, Your State, 123456</p>
-        <p>Country</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Email: info@yourcompany.com</p>
+        <p>12, Burari Chowk</p>
+        <p>North Delhi, Delhi, 110084</p>
+        <p>INDIA</p>
+        <p>Phone: +91 6200253919</p>
+        <p>Email: itsksuraj2002@gmail.com</p>
       </div>
       <div className="map-section">
         <iframe

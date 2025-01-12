@@ -1,11 +1,13 @@
 .footer {
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: var(--primary-dark);
+  /* background-color: #f8f9fa; */
   /* padding: 10px 20px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  color: black;
+  /* color: black; */
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -40,7 +42,8 @@
 
 .footer-section ul li a {
   text-decoration: none;
-  color: #000;
+  /* color: #000; */
+  color: var(--text-secondary);
 }
 
 .footer-section ul li a:hover {
@@ -62,7 +65,8 @@
 }
 
 .social-icons li a:hover {
-  color: #000; /* Black on hover for all icons */
+  color: var(--text-secondary);
+  /* color: #000;  */
 }
 
 /* Custom colors for individual social media icons */
@@ -88,7 +92,8 @@
 
 .footer-bottom ul li a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-secondary);
+  /* color: #000; */
 }
 
 .footer-bottom ul li a:hover {

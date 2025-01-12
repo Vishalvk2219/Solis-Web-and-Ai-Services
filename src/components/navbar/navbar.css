@@ -1,107 +1,145 @@
-/* Navbar.css */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
-  background-color:black;
-  box-shadow: 0 4px 6px rgba(206, 194, 194, 0.5); /* Add shadow here */
-  position: sticky; /* Makes navbar stick to the top */
+  padding: 10px 20px;
+  /* padding: var(--spacing-md) var(--spacing-xl); */
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+  box-shadow: var(--shadow-lg);
+  position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar-logo a {
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
+.navbar-logo img {
+  width: 100%;        
+  height: 100%;       
+  object-fit:scale-down;  
+  object-position: center;
+}
+
+.navbar-logo {
+  padding-left: 10px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.navbar-logo img {
+  height: 100%;
+  max-width: 150px; /* Adjust based on your logo's width */
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
-  gap:50px;
+  gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
 }
 
 .navbar-links li {
-  margin-left: 20px;
+  position: relative;
 }
 
 .navbar-links a {
-  font-family: 'Lora', serif;   
-  /* font-family: 'Playfair Display', serif; */
-  color: white;
+  color: var(--background-default);
   text-decoration: none;
-  font-size: 18px;
+  font-size: var(--font-size-lg);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-
-/* .navbar-links li:hover{
-  transform: scale(1.5);
-
-} */
-
-.navbar-links a:hover:not(.login-link) {
-  color: #a1a195; /* Change color on hover */
-
+.navbar-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
 }
 
-
+/* Active link styling */
+.navbar-links .active-link {
+  color: var(--accent-color); /* Change text color for the active link */
+  font-weight: bold; /* Make the active link bold */
+  /* text-decoration: underline; */
+  transform: scale(1.1); /* Slightly enlarge the active link */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
 .navbar-links a.login-link {
-  background-color: #628eb7; /* Background color for Log In */
-  border: 2px solid #0056b3; /* Border color for Log In */
-  border-radius: 5px; /* Optional: Adds rounded corners */
-  padding: 5px 10px; /* Optional: Adds padding */
+  background-color: var(--accent-dark);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-full);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .navbar-links a.login-link:hover {
-  background-color: #4b94e1; /* Hover effect for Log In */
-  border-color: #1f0cb5; /* Border color on hover */
+  background-color: var(--accent-color);
+  border-color: var(--accent-light);
+  color: var(--primary-dark);
+  transform: translateY(-3px);
 }
 
-
-
-
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-around;
-  height: 30px;
+  justify-content: space-between;
+  height: 24px;
   width: 30px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .hamburger .line {
-  height: 4px;
+  height: 3px;
   width: 100%;
-  background-color: white;
-  border-radius: 10px;
+  background-color: var(--background-default);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.3s ease;
 }
 
+.hamburger:hover .line {
+  background-color: var(--accent-color);
+}
+
+/* Active menu */
 .navbar-links.active {
-  display: block;
+  display: flex;
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-dark);
+  flex-direction: column;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 0.3s ease-out;
 }
 
-.navbar-links li {
-  margin: 10px 0;
+@keyframes slideIn {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbar-links {
     display: none;
     flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-lg);
   }
 
   .hamburger {
+    display: flex;
+  }
+
+  .navbar-links.active {
     display: flex;
   }
 }
