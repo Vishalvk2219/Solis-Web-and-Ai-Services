@@ -1,0 +1,123 @@
+/* About.css */
+.about-container {
+  padding: var(--spacing-xl);
+  background-color: var(--background-default);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.about-content {
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-xl);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.text-section {
+  flex: 1;
+  min-width: 300px;
+  padding: var(--spacing-xl);
+  background-color: var(--background-paper);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--text-light);
+}
+
+.about-title {
+  font-size: clamp(1.5rem, 4vw, var(--font-size-2xl));
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: 700;
+}
+
+.about-text {
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: var(--spacing-md);
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 100%;
+}
+
+.text-block {
+  font-size: clamp(1rem, 2vw, var(--font-size-lg));
+  line-height: 1.6;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+  margin: 0;
+  font-family: var(--font-family);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.media-section {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding-right: var(--spacing-xl);
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1s 0.3s forwards;
+}
+
+.media-content img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 1200px) {
+  .about-content {
+    gap: var(--spacing-lg);
+  }
+  
+  .media-section {
+    width: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-container {
+    padding: var(--spacing-lg);
+  }
+  
+  .about-content {
+    flex-direction: column-reverse;
+  }
+  
+  .media-section {
+    width: 100%;
+    max-width: 500px;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: var(--spacing-md);
+  }
+  
+  .text-section {
+    padding: var(--spacing-md);
+  }
+}

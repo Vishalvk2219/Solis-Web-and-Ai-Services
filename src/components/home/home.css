@@ -1,0 +1,138 @@
+/* Main container */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background video styling */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.react-player-background {
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Foreground content overlay */
+.content-overlay {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* Styling for the text container h1 */
+.text-container h1 {
+  font-size: 8rem;
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(to right, #d3502f, #d7f454);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.text-container h2{
+  font-size: 3rem;
+}
+/* Media Queries */
+@media (max-width: 1024px) {
+  .text-container h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    height: 100svh; /* Using small viewport height for mobile */
+  }
+  
+  .video-background {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .react-player-background {
+    width: 100% !important; /* Override any inline styles */
+    height: 100% !important;
+    object-fit: cover;
+  }
+  
+  .content-overlay {
+    width: 100%;
+    z-index: 1; /* Ensure text is above video */
+    background: rgba(0, 0, 0, 0.2); /* Slight overlay for better text visibility */
+    padding: 15px;
+  }
+  
+  .text-container h1 {
+    font-size: 4rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-background{
+    position: absolute;
+    top:-150px;
+    left:-70%;
+    width: 1000px;
+    height:100%;
+    
+  }
+  .text-container{
+    position:absolute;
+    top:-150px;
+  }
+  .text-container h1 {
+    font-size: 3rem;
+  }
+  .text-container h2 {
+    padding: 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  .content-overlay {
+    padding: 10px;
+  }
+}
+
+/* Portrait orientation specific styles */
+@media (max-width: 768px) and (orientation: portrait) {
+  .react-player-background {
+    height: 100svh !important;
+  }
+}
+
+/* Landscape orientation specific styles */
+@media (max-width: 768px) and (orientation: landscape) {
+  .home-container {
+    height: 100lvh; /* Using large viewport height for landscape */
+  }
+  
+  .text-container h1 {
+    font-size: 3.5rem;
+  }
+}

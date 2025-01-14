@@ -1,0 +1,150 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* padding: var(--spacing-md) var(--spacing-xl); */
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-logo img {
+  width: 100%;        
+  height: 100%;       
+  object-fit:scale-down;  
+  object-position: center;
+}
+
+.navbar-logo {
+  padding-left: 10px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.navbar-logo img {
+  height: 100%;
+  max-width: 150px; /* Adjust based on your logo's width */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links a {
+  color: var(--background-default);
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Active link styling */
+.navbar-links .active-link {
+  color: var(--accent-color); /* Change text color for the active link */
+  font-weight: bold; /* Make the active link bold */
+  /* text-decoration: underline; */
+  transform: scale(1.1); /* Slightly enlarge the active link */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a.login-link {
+  background-color: var(--accent-dark);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius-full);
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a.login-link:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-light);
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hamburger .line {
+  height: 3px;
+  width: 90%;
+  background-color: var(--background-default);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover .line {
+  background-color: var(--accent-color);
+}
+
+.navbar-links.active {
+  display: flex;
+  position: fixed; /* Fixed to the viewport */
+  top: 75px; /* Start just below the navbar (adjust based on your navbar height) */
+  right: 0; /* Align the menu to the right */
+  width: 55%; /* 60% width */
+  height:100%; /* Full height minus the navbar's height */
+  background-color: var(--primary-dark); /* Background color for the menu */
+  flex-direction: column; /* Stack links vertically */
+  /* justify-content: center;  */
+  /* align-items: ;  */
+  /* margin: 70px 0; */
+  padding:var(--spacing-lg); /* Add spacing around links */
+  box-shadow: var(--shadow-lg); /* Add a shadow for a pop-out effect */
+  z-index: 1000; /* Ensure it appears above other content */
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Keyframes for sliding in from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    gap: var(--spacing-lg);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+}
